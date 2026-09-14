@@ -1,0 +1,12 @@
+{
+  "name": "MacroSnap",
+  "short_name": "MacroSnap",
+  "description": "Photograph a meal, get its macros, track your day.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090f",
+  "theme_color": "#07090f",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

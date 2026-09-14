@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #07090f;
+  --color-surface: #11141d;
+  --color-surface-2: #181d29;
+  --color-line: #262d3d;
+  --color-muted: #8a93a8;
+  --color-cal: #f5c451;
+  --color-protein: #4ade80;
+  --color-carbs: #60a5fa;
+  --color-fat: #f472b6;
+  --color-fiber: #a78bfa;
+}
+
+html {
+  color-scheme: dark;
+  /* Keep the layout still when a long day's list adds a scrollbar. */
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--color-ink);
+  color: #e9edf5;
+  -webkit-tap-highlight-color: transparent;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Clear the bottom bar, the floating camera button, and the iOS home indicator. */
+  padding-bottom: calc(9rem + env(safe-area-inset-bottom));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+input,
+select,
+textarea {
+  /* iOS Safari zooms the whole page when a focused field is under 16px. */
+  font-size: 16px;
+}
+
+/* Hide number spinners — every numeric field here is thumb-edited. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.07),
+    transparent
+  );
+  animation: shimmer 1.4s infinite;
+}

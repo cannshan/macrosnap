@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env
+.env.local
+data/*.db
+data/photos/*
+!data/photos/.gitkeep
+*.tsbuildinfo
+next-env.d.ts
+data/*.db-shm
+data/*.db-wal
